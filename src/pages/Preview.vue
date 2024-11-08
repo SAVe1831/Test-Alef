@@ -3,11 +3,11 @@
         <div class="preview">
             <div class="preview__personal-data">
                 <p class="preview__personal-data-title">Персональные данные</p>
-                <p v-if="store.getters.getPersonalData.parentName" class="preview__personal-data-value">{{ store.getters.getPersonalData.parentName}}, {{ store.getters.getPersonalData.parentAge }} {{ getAgeSuffix(store.getters.getPersonalData.parentAge) }}</p>
+                <p v-if="store.getters.getPersonalData.parentName" class="preview__personal-data-value">{{ store.getters.getPersonalData.parentName.trim() }}, {{ store.getters.getPersonalData.parentAge }} {{ getAgeSuffix(store.getters.getPersonalData.parentAge) }}</p>
             </div>
             <div class="preview__children-data">
                 <p class="preview__children-data-title">Дети</p>
-                <div v-if="store.getters.getChildrenData.length" v-for="child in store.getters.getChildrenData" :key="child.id" class="preview__children-data-value">{{ child.name }}, {{ child.age }} {{ getAgeSuffix(child.age) }}</div>              
+                <div v-if="store.getters.getChildrenData.length" v-for="child in store.getters.getChildrenData" :key="child.id" class="preview__children-data-value">{{ child.name.trim() }}, {{ child.age }} {{ getAgeSuffix(child.age) }}</div>              
             </div>
         </div>
     </div>    
